@@ -90,8 +90,6 @@ cargo test --manifest-path src-tauri/Cargo.toml
 
 ## Binários
 
-O binário é gerado no sistema em que o comando roda. O build do macOS não produz o `.exe`.
-
 ```bash
 npm run tauri build
 ```
