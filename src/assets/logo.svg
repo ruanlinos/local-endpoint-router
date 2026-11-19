@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="160" viewBox="0 0 640 160" fill="none">
+  <rect width="640" height="160" rx="28" fill="#0c0c0e"/>
+  <g transform="translate(32 32)">
+    <rect width="96" height="96" rx="22" fill="#141416"/>
+    <path
+      fill="#34d399"
+      fill-rule="evenodd"
+      d="M48 16.5 79.5 48 48 79.5 16.5 48 48 16.5ZM48 34.4 61.6 48 48 61.6 34.4 48 48 34.4Z"
+    />
+  </g>
+  <text
+    x="152"
+    y="74"
+    fill="#a1a1aa"
+    font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif"
+    font-size="13"
+    font-weight="600"
+    letter-spacing="3.2"
+  >
+    LOOPBACK
+  </text>
+  <text
+    x="152"
+    y="112"
+    fill="#fafafa"
+    font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif"
+    font-size="32"
+    font-weight="650"
+    letter-spacing="-0.4"
+  >
+    Local Endpoint Router
+  </text>
+</svg>

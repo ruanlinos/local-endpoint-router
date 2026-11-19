@@ -1,0 +1,31 @@
+import { invoke } from "@tauri-apps/api/core";
+import type { CaStatus, HealthReport, Profile, ProfileDocument, ProxyStatus, Rule, RuleInput, Settings, SystemProxyStatus, TrafficEvent } from "@/types";
+
+export const api = {
+  getSettings: () => invoke<Settings>("get_settings"),
+  updateSettings: (settings: Settings) => invoke<Settings>("update_settings", { settings }),
+  listProfiles: () => invoke<Profile[]>("list_profiles"),
+  createProfile: (name: string) => invoke<Profile>("create_profile", { name }),
+  renameProfile: (id: string, name: string) => invoke<Profile>("rename_profile", { id, name }),
+  deleteProfile: (id: string) => invoke<Settings>("delete_profile", { id }),
+  setActiveProfile: (id: string) => invoke<Settings>("set_active_profile", { id }),
+  exportProfile: (id: string) => invoke<ProfileDocument>("export_profile", { id }),
+  importProfile: (document: ProfileDocument) => invoke<Profile>("import_profile", { document }),
+  listRules: () => invoke<Rule[]>("list_rules"),
+  createRule: (rule: RuleInput) => invoke<Rule>("create_rule", { rule }),
+  updateRule: (id: string, rule: RuleInput) => invoke<Rule>("update_rule", { id, rule }),
+  deleteRule: (id: string) => invoke<void>("delete_rule", { id }),
+  setRuleEnabled: (id: string, enabled: boolean) => invoke<Rule>("set_rule_enabled", { id, enabled }),
+  proxyStatus: () => invoke<ProxyStatus>("proxy_status"),
+  startProxy: () => invoke<ProxyStatus>("start_proxy"),
+  stopProxy: () => invoke<ProxyStatus>("stop_proxy"),
+  listTraffic: () => invoke<TrafficEvent[]>("list_traffic"),
+  clearTraffic: () => invoke<void>("clear_traffic"),
+  systemProxyStatus: () => invoke<SystemProxyStatus>("system_proxy_status"),
+  enableSystemProxy: () => invoke<SystemProxyStatus>("enable_system_proxy"),
+  disableSystemProxy: () => invoke<SystemProxyStatus>("disable_system_proxy"),
+  caStatus: () => invoke<CaStatus>("ca_status"),
+  trustCa: () => invoke<CaStatus>("trust_ca"),
+  listHealth: () => invoke<HealthReport[]>("list_health"),
+  checkHealth: () => invoke<HealthReport[]>("check_health"),
+};

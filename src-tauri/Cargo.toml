@@ -1,0 +1,49 @@
+[package]
+name = "local-endpoint-router"
+version = "0.1.0"
+description = "Local Endpoint Router"
+edition = "2021"
+rust-version = "1.85"
+
+[lib]
+name = "local_endpoint_router"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2.7", features = [] }
+
+[dependencies]
+tauri = { version = "2.12", features = [] }
+tauri-plugin-opener = "2"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+tokio = { version = "1", features = ["macros", "rt-multi-thread", "net", "time", "io-util", "sync", "fs", "process"] }
+tokio-util = { version = "0.7", features = ["rt"] }
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter", "fmt"] }
+thiserror = "2"
+sqlx = { version = "0.9", default-features = false, features = ["runtime-tokio", "sqlite", "migrate", "macros", "json", "tls-none"] }
+arc-swap = "1"
+hyper = { version = "1", features = ["http1", "server", "client"] }
+hyper-util = { version = "0.1", features = ["http1", "server", "tokio", "client-legacy"] }
+hyper-rustls = { version = "0.27", default-features = false, features = ["http1", "native-tokio", "ring", "tls12"] }
+rustls = { version = "0.23", default-features = false, features = ["ring", "std", "tls12"] }
+tokio-rustls = { version = "0.26", default-features = false, features = ["ring", "tls12"] }
+rustls-native-certs = "0.8"
+rustls-pemfile = "2"
+rcgen = { version = "0.14", default-features = false, features = ["pem", "ring", "x509-parser"] }
+ring = "0.17"
+http-body = "1"
+http-body-util = "0.1"
+bytes = "1"
+pin-project-lite = "0.2"
+url = "2"
+uuid = { version = "1", features = ["v4", "serde"] }
+time = { version = "0.3", features = ["formatting", "macros"] }
+hex = "0.4"
+
+[target.'cfg(windows)'.dependencies]
+winreg = "0.55"
+
+[dev-dependencies]
+tokio = { version = "1", features = ["macros", "rt-multi-thread", "net", "time", "io-util", "sync"] }
