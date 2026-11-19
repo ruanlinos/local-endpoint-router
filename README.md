@@ -74,9 +74,12 @@ O monitor guarda um anel de 500 entradas. Por padrão, `Authorization`, `Proxy-A
 
 ## Desenvolvimento
 
-Requisitos: Node.js, Rust 1.85+ e o toolchain nativo do sistema (Xcode Command Line Tools no macOS, Visual Studio Build Tools com MSVC no Windows).
+Requisitos: Node.js 22, Rust 1.85 e o toolchain nativo do sistema (Xcode Command Line Tools no macOS, Visual Studio Build Tools com MSVC no Windows).
+
+Quem usa [mise](https://mise.jdx.dev) instala essas duas versões com o `mise.toml` da raiz:
 
 ```bash
+mise install
 npm install
 npm run tauri dev
 ```
